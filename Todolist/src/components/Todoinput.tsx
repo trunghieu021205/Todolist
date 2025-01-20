@@ -19,28 +19,6 @@ export default function Todoinput() {
   const selectPriorityIcon=()=>{
     setpriorityState((prevState)=>!prevState);
   }
-  const sortTodolist=()=>{
-    Todoitems.sort((a,b)=>{
-      const DateofA=new Date(a.pickedDate)
-      const DateofB=new Date(b.pickedDate)
-      if(a.priority===b.priority){
-        console.log(1);
-        if(DateofA<DateofB){
-          return -1;
-        }
-        if(DateofA==DateofB){
-          if(DateofA.getTime()<DateofB.getTime()){
-            return -1;
-          }
-        }
-        return 1;
-      }
-      if(a.priority){
-          return -1;
-        }
-      return 1;
-    });
-  } 
   const additem = (data:FormData) =>{
     const item:TodoitemStruct={
       id:'Todoitem-'+Todoitems.length,
@@ -49,7 +27,6 @@ export default function Todoinput() {
       priority:priorityState,
     }
     addTodoitem(item)
-    sortTodolist()
     setdefaultDateTime(defaultTime())
     setpriorityState(false)
   }
@@ -57,7 +34,6 @@ export default function Todoinput() {
     <div>
       <Form<FormData>
         onSubmit={(data,formProps)=>{
-          console.log('submitted')
           if(validateOnSubmit(data)==undefined){
             additem(data);
             formProps.restart();
@@ -88,6 +64,7 @@ export default function Todoinput() {
                             validationState
                           },
                           id: id,
+                          
                           minDate:today,
                         }}
                         timePickerProps={{
