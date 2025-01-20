@@ -58,13 +58,13 @@ export default function Todoinput() {
                       </label>
                       <DateTimePicker
                         {...rest}
+                        locale='vi-VN'
                         datePickerProps={{
                           shouldShowCalendarButton: true,
                           selectProps: {
                             validationState
                           },
                           id: id,
-                          
                           minDate:today,
                         }}
                         timePickerProps={{

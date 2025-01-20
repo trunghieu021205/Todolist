@@ -22,7 +22,7 @@ export default function Todo({value,pickedDate,Itemid,priority}) {
   setInterval(()=>{
     setremainTime(remainTimeString(pickedDate))
   },10)
-  const time=pickedTime.toLocaleTimeString('en-us',{hour:'2-digit',minute:'2-digit',hour12:true});
+  const time=pickedTime.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
   let day;
   if(pickedTime.getFullYear()!=new Date().getFullYear()){
     day=pickedTime.toLocaleDateString('vi-VN',{year:'numeric',month:'2-digit',day:'2-digit'});
