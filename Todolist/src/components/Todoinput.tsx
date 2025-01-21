@@ -25,6 +25,7 @@ export default function Todoinput() {
       value:data['TextInput'],
       pickedDate:data['DateTime'],
       priority:priorityState,
+      show:true,
     }
     addTodoitem(item)
     setdefaultDateTime(defaultTime())
@@ -52,9 +53,15 @@ export default function Todoinput() {
                 const validationState = error ? 'error' : 'none';
                 return (
                     <Fragment>
-                      <label className='text-[12px] text-cyan-200 ml-2'>
+                      <label 
+                      className='text-[12px] text-cyan-200 ml-2'
+                      >
                         Choose Deadline Date and Time
-                        <span className="text-red-500">*</span>
+                        <span 
+                        className="text-red-500"
+                        >
+                          *
+                        </span>
                       </label>
                       <DateTimePicker
                         {...rest}
@@ -100,9 +107,15 @@ export default function Todoinput() {
               {({ fieldProps: { id, ...rest }, error }) => {
                 return (
                   <Fragment>
-                    <label className='text-[12px] text-cyan-200 ml-2'>
+                    <label 
+                    className='text-[12px] text-cyan-200 ml-2'
+                    >
                       Write task need to do
-                      <span className="text-red-500">*</span>
+                      <span 
+                      className="text-red-500"
+                      >
+                        *
+                      </span>
                     </label>
                     <Textfield {...rest} id={id}
                       placeholder="Them viec can lam..."
@@ -118,7 +131,13 @@ export default function Todoinput() {
                             >
                             </FontAwesomeIcon>
                           </div>
-                          <Button appearance="primary" type="submit" aria-label="addButton">Add</Button>
+                          <Button 
+                          appearance="primary" 
+                          type="submit" 
+                          aria-label="addButton"
+                          >
+                            Add
+                          </Button>
                         </div>
                       }
                     >  
@@ -131,8 +150,7 @@ export default function Todoinput() {
                   </Fragment>
                 );
               }}
-            </Field>
-            
+            </Field>   
           </form>
         )}  
       </Form>  

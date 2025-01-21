@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar} from '@fortawesome/free-solid-svg-icons';
 export default function Todo({value,pickedDate,Itemid,priority}) {
   const [remainTime,setremainTime]=useState(remainTimeString(pickedDate));
-  
   const {removeTodoitem}=useTodoitems();
   const remove=()=>{
     const item :TodoitemStruct={
@@ -15,6 +14,7 @@ export default function Todo({value,pickedDate,Itemid,priority}) {
       value:'',
       pickedDate:'',
       priority:false,
+      show:true,
     }
     removeTodoitem(item)
   }

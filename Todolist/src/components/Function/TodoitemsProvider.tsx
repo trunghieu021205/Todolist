@@ -34,8 +34,15 @@ export const TodoitemsProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     const removeTodoitem = (Todoitem: TodoitemStruct) => {
       setTodoItems((prevTodoitems) => prevTodoitems.filter((item) => item.id !== Todoitem.id));
     };
+    const hiddenTodoitem=(value:string)=>{
+      setTodoItems((prevTodoitems)=>
+        prevTodoitems.map((item)=>
+          !item.value.toLowerCase().startsWith(value.toLowerCase())?{...item,show:false}:{...item,show:true}
+        )
+      )
+    }
     return (
-      <TodoitemsContext.Provider value={{Todoitems, addTodoitem, removeTodoitem}}>
+      <TodoitemsContext.Provider value={{Todoitems ,addTodoitem, removeTodoitem,hiddenTodoitem}}>
         {children}
       </TodoitemsContext.Provider>
     );
