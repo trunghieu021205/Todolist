@@ -7,8 +7,17 @@ export default function Todolist() {
     <div className='mt-1 w-full h-[1px] bg-blue-200'></div>
     <ul className='h-fit mt-1'>
       {Todoitems.map(item=>(
-        <li className='h-fit border border-gray-500 bg-emerald-300'style={{listStyleType:'none'}} key={item.id} >
-            <Todo value={item.value} pickedDate={item.pickedDate} Itemid={item.id} priority={item.priority}/>
+        item.show&&<li 
+        className='h-fit border border-gray-500 bg-emerald-300' 
+        style={{listStyleType:'none'}} 
+        key={item.id}
+        >
+            <Todo 
+            value={item.value} 
+            pickedDate={item.pickedDate} 
+            Itemid={item.id} 
+            priority={item.priority}
+            />
         </li>
       ))}
 

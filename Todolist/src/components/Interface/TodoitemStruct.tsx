@@ -3,4 +3,5 @@ export interface TodoitemStruct{
     value:string,
     pickedDate:string,
     priority:boolean,
+    show:boolean,
 }
