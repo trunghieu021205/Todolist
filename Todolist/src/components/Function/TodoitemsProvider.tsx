@@ -7,7 +7,6 @@ export const TodoitemsProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       setTodoItems((prevTodoitems) => {
         const newTodoitems=[Todoitem,...prevTodoitems]
         if(newTodoitems.length>=2){
-          console.log(1)
           newTodoitems.sort((a,b)=>{
             const DateofA=new Date(a.pickedDate)
             const DateofB=new Date(b.pickedDate)
